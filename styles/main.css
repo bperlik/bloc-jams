@@ -1,3 +1,10 @@
+*, *::before, *::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box:
+    box-sizing: border-box;
+}
+
+
 html {
   height: 100%; /*make sure our html fills browser window*/
   font-size 100%;
@@ -43,30 +50,31 @@ body.landing {
   letter-spacing: 0.5rem; /*puts .5 root em space between each char*/
   text-shadow: 1px 1px 0px rgb(58,23,63); /* shadow underneath */  
 }
-.selling-points {
-  position: relative;
-  display: table;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; 
-}
-.point {
-  display: table-cell;
-  position: relative;
-  width: 33.3%;
-  padding: 2rem;
-  text-align: center;
-}
-.point .point-title {
-  font-size: 1.25rem;
+
+.container {
+  margin: 0 auto;
+  max-width: 64rem;
+
+
+/* Medium screens (640px) */
+@media (min-width: 640px) {
+  html { font-size: 112%; }
+  
+    .column {
+      float: left;
+      padding-left: 1rem;
+      padding-right: 1rem;
+  } 
+  
+     .column.full { width: 100%; }
+     .column.two-thirds { width: 66.7%; }
+     .column.half { width: 50%; }
+     .column.third { width: 33.3%; }
+     .column.fourth { width: 25%; }
+     .column.flow-opposite { float: right; }    
 }
 
-.ion-music-note,
-.ion-radio-waves,
-.ion-iphone {
-  color: rgb(233,50,177);
-  font-size: 5rem;
-}
-
+/* Large screens (1024px) */
+@media (min-width: 1024px) {
+  html { font-size: 120%; }
 }

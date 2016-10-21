@@ -30,9 +30,8 @@ body.landing {
 .navbar .logo {
   position: relative; /*positioning */
   left: 2rem;
-  cursor: pointer; /*produces the finger pointer icon when hover
+  cursor: pointer; /*produces the finger pointer icon when hover*/
 }
-
  .navbar .links-container {
      display: table;
      position: absolute;
@@ -43,7 +42,7 @@ body.landing {
      /* #3 */
      text-decoration: none;
  }
- 
+ /* remember LOVE HATE when using nav pseudo selectors */
  .links-container .navbar-link {
      display: table-cell;
      position: relative;
@@ -61,13 +60,23 @@ body.landing {
      text-decoration: none;
      cursor: pointer;
  }
- 
-   /* #5 */
+
+/* visited changes */
+/* .links-container .navbar-link:visited {
+  color: rgb(233,50,117);
+  background: white;
+} */
+    
+   /* hover changes */
  .links-container .navbar-link:hover {
      color: rgb(233,50,117);
  }
-  
-  
+   /* adding active color changes */
+.links-container .navbar-link:active {
+     color: rgb(233,50,117);
+     background: white;
+}
+    
 .hero-content {
   position: relative; /*positioning */
   min-height: 600px; 
@@ -95,7 +104,11 @@ body.landing {
 .container {
   margin: 0 auto;
   max-width: 64rem;
+}
 
+.container.narrow {
+	max-width: 56rem;
+}
 
 /* Medium screens (640px) */
 @media (min-width: 640px) {
@@ -133,4 +146,3 @@ body.landing {
   .clearfix::after {
     clear: both;
   }
-  

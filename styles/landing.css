@@ -41,8 +41,10 @@
      width: 33.3%;
      padding: 2rem;
      text-align: center;
+	 -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
  }
-
  
  .point .point-title {
      font-size: 1.25rem;

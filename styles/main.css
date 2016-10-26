@@ -14,9 +14,7 @@ body {
   color: white; /*sets text color to white */
   min-height: 100%; /*height of body minimum*/
 }
-body.landing {
-    background-color: rgb(58,23,63); /* background color*/
-}
+
 .navbar {
   position: relative;
   padding: 0.5rem;
@@ -76,30 +74,6 @@ body.landing {
      background: white;
 }
     
-.hero-content {
-  position: relative; /*positioning */
-  min-height: 600px; 
-  background-image: url(../assets/images/bloc_jams_bg.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-.hero-content .hero-title {
-  position: absolute;
-  top: 40%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  width: 100%;
-  text-align: center;
-  font-size: 4rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.5rem; /*puts .5 root em space between each char*/
-  text-shadow: 1px 1px 0px rgb(58,23,63); /* shadow underneath */  
-}
-
 .container {
   margin: 0 auto;
   max-width: 64rem;
@@ -132,7 +106,7 @@ body.landing {
   html { font-size: 120%; }
 }
 
-.clearfix::before, 
+.clearfix::before,    /* clears floats to pop next block down to next line */
   .clearfix:after {     
     content: " ";  
     display: table;    

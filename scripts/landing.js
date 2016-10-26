@@ -7,10 +7,10 @@
 		 points[index].style.msTransform = "scaleX(1) translateY(0)";
 		 points[index].style.WebkitTransform = "scaleX(1) translateY(0)";
 	} //end function 
-
-	for (var i = 0; i< points.length; i++) {
-		 revealPoint(i);		 
-	} //end for loop	 
+forEach(points,revealPoint);					//execute FOR EACH HERE
+//	for (var i = 0; i< points.length; i++) {
+//		 revealPoint(i);		 
+//	} //end for loop	 
 	
 }; /* end animatePoints function */
 

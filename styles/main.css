@@ -1,8 +1,8 @@
-*, *::before, *::after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box:
-    box-sizing: border-box;
-}
+ *, *::before, *::after {
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+ }
 
 html {
   height: 100%; /*make sure our html fills browser window*/
@@ -58,12 +58,6 @@ body {
      cursor: pointer;
  }
 
-/* visited changes */
-/* .links-container .navbar-link:visited {
-  color: rgb(233,50,117);
-  background: white;
-} */
-    
    /* hover changes */
  .links-container .navbar-link:hover {
      color: rgb(233,50,117);
@@ -88,9 +82,9 @@ body {
   html { font-size: 112%; }
   
     .column {
-      float: left;
+	  float: left;
       padding-left: 1rem;
-      padding-right: 1rem;
+      padding-right: 1rem;	 
 	}
   
      .column.full { width: 100%; }
@@ -104,10 +98,11 @@ body {
 /* Large screens (1024px) */
 @media (min-width: 1024px) {
   html { font-size: 120%; }
+     
 }
 
 .clearfix::before,    /* clears floats to pop next block down to next line */
-  .clearfix:after {     
+  .clearfix::after {     
     content: " ";  
     display: table;    
   }

@@ -14,7 +14,6 @@
      ]
  };
 
- 
  // Another Example Album
  var albumMarconi = {
      title: 'The Telephone',
@@ -31,6 +30,22 @@
      ]
  };
 
+// My Example Album
+ var albumBeatles = {
+     title: 'White Album',
+     artist: 'Beatles',
+     label: 'Apple',
+     year: '1968',
+     albumArtUrl: 'assets/images/album_covers/20.png',
+     songs: [
+         { title: 'Back in the U.S.S.R.', duration: '2:01' },
+         { title: 'Dear Prudence', duration: '3:17' },
+         { title: 'Rocky Raccoon', duration: '2:04'},
+         { title: 'Blackbird', duration: '3:14' },
+         { title: 'I Will', duration: '2:15'}
+     ]
+ };
+
 //function to dynamically generate song row content
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
@@ -44,15 +59,15 @@ var createSongRow = function(songNumber, songName, songLength) {
      return template;
  };
 
+ // populate the requred elements 
+var albumTitle = document.getElementsByClassName('album-view-title')[0];
+var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+
 var setCurrentAlbum = function(album) {
-     // populate the requred elements and assign corresp. values
-     var albumTitle = document.getElementsByClassName('album-view-title')[0];
-     var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-     var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-     var albumImage = document.getElementsByClassName('album-cover-art')[0];
-     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
- 
-     // add values into elements for the first node - firstChild
+      // add values into elements for the first node - firstChild
      albumTitle.firstChild.nodeValue = album.title;
      albumArtist.firstChild.nodeValue = album.artist;
      albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
@@ -68,9 +83,19 @@ var setCurrentAlbum = function(album) {
  };
  
  window.onload = function() {
-     setCurrentAlbum(albumPicasso);
- };
+	  setCurrentAlbum(albumPicasso);  //set first image before click 
+	  var index = 1;						 //set to second image for first click 
+	  var albumArray = [albumPicasso, albumMarconi, albumBeatles]; //create array for albums
 
+	 albumImage.addEventListener("click", function(event) {   //listen for click on image
+    	setCurrentAlbum(albumArray[index]);
+		index++;
+		if (index === albumArray.length) {
+			index = 0;
+		}  //end if loop
+});  //end listener
+
+ };   //end window onload function
 
 
 

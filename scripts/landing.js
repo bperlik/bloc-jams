@@ -1,32 +1,29 @@
-var pointsArray = document.getElementsByClassName('point');
- 
-var animatePoints = function(points) {
-	var revealPoint = function(index) {	
-		 points[index].style.opacity = 1;
-		 points[index].style.transform = "scaleX(1) translateY(0)";
-		 points[index].style.msTransform = "scaleX(1) translateY(0)";
-		 points[index].style.WebkitTransform = "scaleX(1) translateY(0)";
-	}; //end function 
-
-	for (var i = 0; i< points.length; i++) {
-		 revealPoint(i);		 
-	} //end for loop	 
+var animatePoints = function() {
+	var revealPoint = function() {
+     // #7
+     $(this).css({
+        opacity: 1,
+        transform: 'scaleX(1) translateY(0)'
+      });	
+}; //end function 
+// #6
+$.each($('.point'), revealPoint);
 	
 }; /* end animatePoints function */
 
-window.onload = function() {
-	if (window.innerHeight > 950) {  // automatically animates if tall screen
-         animatePoints(pointsArray);
-     	} 
-	window.addEventListener('scroll', function(event) {	
-    	var sellingPoints = document.getElementsByClassName('selling-points')[0];
-    	var scrollDistance = sellingPoints.getBoundingClientRect().top - 
-		window.innerHeight + 200; 
-        if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance) {
-             animatePoints(pointsArray);   
-         }
-     });
- }
+ $(window).load(function() {
+	if ($(window).height()> 950) {  // automatically animates if tall screen
+         animatePoints();
+   } 
+	var scrollDistance = $('.selling-points').offset().top - $(window).height() + 200;
+   $(window).scroll(function(event) {
+	  if ($(window).scrollTop() >= scrollDistance) {
+        animatePoints();
+	  }
+	window.innerHeight + 200; 
+  });
+
+ });
    
 
  	

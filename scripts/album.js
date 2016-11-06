@@ -14,7 +14,7 @@ var clickHandler = function () {
 	if (currentlyPlayingSongNumber !== songNumber) {
 		$(this).html(pauseButtonTemplate); // show pause
 		currentlyPlayingSongNumber = songNumber;													//should the parse int go here too?????????	
-		currentSongFromAlbum = currentAlbum.songs[songNumber - 1];						   // and here?????????????
+		currentSongFromAlbum = currentAlbum.songs[songNumber - 1];						    // and here?????????????
 		updatePlayerBarSong();																		
 	} else if (currentlyPlayingSongNumber === songNumber) {
 		$(this).html(playButtonTemplate); //show play

@@ -136,6 +136,19 @@ var nextSong = function () {
 	$lastSongNumberCell.html(lastSongNumber);
 };
 
+var togglePlayFromPlayerBar = function() {		//assignment20  ERROR ON 141
+
+   if ( currentSoundFile.isPaused()  &&  $clickPlayerBar.click() ); {
+	$(this).html(playButtonTemplate);
+	$clickPlayerBar.html(playerBarPlayButton);
+	currentSoundFile.pause();
+     } else ($clickPlayerBar.click() {
+	$(this).html(playButtonTemplate);
+	$(this).html(playerBarPlayButton);
+	currentSoundFile.play();
+    }
+);
+
 var previousSong = function () {
 
 	// Note the difference between this implementation and the one in
@@ -214,9 +227,11 @@ var currentVolume = 80;
 
 var $previousButton = $('.main-controls .previous');
 var $nextButton = $('.main-controls .next');
+var $clickPlayerBar = $('.main-controls.play-paus');
 
 $(document).ready(function () {
 	setCurrentAlbum(albumPicasso);
 	$previousButton.click(previousSong);
+	$clickPlayerBar.click(togglePlayFromPlayerBar);
 	$nextButton.click(nextSong);
 }); //end doc ready

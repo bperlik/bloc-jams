@@ -136,18 +136,7 @@ var nextSong = function () {
 	$lastSongNumberCell.html(lastSongNumber);
 };
 
-var togglePlayFromPlayerBar = function() {								//assignment20  ERROR ON 141
-	console.log('clicked');
-//	if ( currentSoundFile.isPaused()) {
-//		$(this).html(playButtonTemplate);
-//		$clickPlayerBar.html(playerBarPlayButton);
-//		currentSoundFile.pause();
-//
-//	} else  {
-//		$(this).html(playButtonTemplate);
-//		$(this).html(playerBarPlayButton);
-//		currentSoundFile.play()
-//   }
+var togglePlayFromPlayerBar = function() {							
 	var currentlyPlayingCell = getSongNumberCell(currentlyPlayingSongNumber);
 	if (currentSoundFile.isPaused()) {
 		$(currentlyPlayingCell).html(pauseButtonTemplate);
@@ -159,8 +148,6 @@ var togglePlayFromPlayerBar = function() {								//assignment20  ERROR ON 141
 		currentSoundFile.pause();
 	}
 }
-//
-//);
 
 var previousSong = function () {
 
